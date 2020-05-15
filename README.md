@@ -24,18 +24,17 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     ...
-    'polls.middleware.PollMiddleware',
+    'djangopollapp.middleware.PollMiddleware',
 ]
 ```
 Include polls api to your urls.py:
 
 ```sh
     # Polls API
-    url('^api-polls/', include('polls.api.urls'))
+    url('^api-polls/', include('djangopollapp.api.urls'))
 ```
 and
 ```sh
-./manage.py makemigrations
 ./manage.py migrate
 ```
 
