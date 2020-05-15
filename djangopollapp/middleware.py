@@ -14,6 +14,12 @@ class PollMiddleware(object):
                 response.set_cookie('client_id', client_id.unique_id)
                 return response
             else:
-                return response
+                try:
+                    ClientsID.objects.get(unique_id=request.COOKIES.get('client_id'))
+                    return response
+                except ClientsID.DoesNotExist:
+                    client_id = ClientsID.objects.create()
+                    response.set_cookie('client_id', client_id.unique_id)
+                    return response
         else:
             return response

@@ -54,7 +54,7 @@ class QuestionSerializer(serializers.ModelSerializer):
             else:
                 return None
         else:
-            return ChoicesSerializer(Choices.objects.filter(qns=obj), many=True).data
+            return ChoicesSerializer(Choices.objects.filter(qns=obj), many=True, context=self.context).data
 
     class Meta:
         model = Questions

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='djangopollapp',
-    version='0.0.45',
+    version='0.1.1',
     author="Coder Bug",
     author_email="thecoderbug@gmail.com",
     description='A simple polls application',

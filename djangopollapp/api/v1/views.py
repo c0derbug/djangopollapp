@@ -116,3 +116,11 @@ class QuestionView(viewsets.ModelViewSet):
         else:
             permission_classes = [AllowAny]
         return [permission() for permission in permission_classes]
+
+    def get_serializer_context(self):
+        return {
+            'request': self.request,
+            'action': self.action,
+            'format': self.format_kwarg,
+            'view': self
+        }
