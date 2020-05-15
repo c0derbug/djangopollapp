@@ -1,3 +1,7 @@
+*.DS_Store
 /__pycache
 /.idea
 /djangopollapp/migrations
+/build
+/dist
+/djangopollapp.egg-info
